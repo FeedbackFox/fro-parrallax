@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VanillaScroll</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_bg.jpg" alt="background" class="scroll scrollbackground" data-rate="0.9">  
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_03.png" alt="layer1" class="scroll scrolllayer1" data-rate="0.8">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_02.png" alt="layer1" class="scroll scrolllayer2" data-rate="0.7">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_man.png" alt="layer1" class="scroll scrolllayer3" data-rate="0.4">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_overlay.png" alt="layer1" class="scroll scrolllayer4" data-rate="0.2">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_01.png" alt="layer1" class="scroll scrolllayer5" data-rate="0">\
+
+        
+        <div class="content">
+            <p> hdwgauydiuwhaydg hwahdgywh uaindhwakidbwa gydhiwajhdg dhjwgyudnwahdb hubudnwjhba hdtywa jh t dh g ud ag  y dhjwag d  h g adg yg h gy  yg dhw  udga dh wahd</p>
+        </div>
+
+
+    <script>
+    
+        window.addEventListener('scroll', function(e) {
+
+            const target = document.querySelectorAll('.scroll');
+
+            var index = 0, length = target.length;
+            for(index; index < length; index++) {
+                var pos = window.pageYOffset * target[index].dataset.rate;
+
+                target[index].style.transform = 'translate3d(0px, ' + pos +'px, 0px)'
+            }
+        });
+    
+    </script>
+</body>
+</html>
