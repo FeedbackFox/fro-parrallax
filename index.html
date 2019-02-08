@@ -18,7 +18,7 @@
 
         
         <div class="content">
-            <p> hdwgauydiuwhaydg hwahdgywh uaindhwakidbwa gydhiwajhdg dhjwgyudnwahdb hubudnwjhba hdtywa jh t dh g ud ag  y dhjwag d  h g adg yg h gy  yg dhw  udga dh wahd</p>
+            <p id="contentp"> hdwgauydiuwhaydg hwahdgywh uaindhwakidbwa gydhiwajhdg dhjwgyudnwahdb hubudnwjhba hdtywa jh t dh g ud ag  y dhjwag d  h g adg yg h gy  yg dhw  udga dh wahd</p>
         </div>
 
 
@@ -27,13 +27,21 @@
         window.addEventListener('scroll', function(e) {
 
             const target = document.querySelectorAll('.scroll');
+            const content = document.getElementById('contentp');
 
             var index = 0, length = target.length;
             for(index; index < length; index++) {
                 var pos = window.pageYOffset * target[index].dataset.rate;
 
                 target[index].style.transform = 'translate3d(0px, ' + pos +'px, 0px)'
+                if(window.pageYOffset >= 1080) {
+                    target[index].classList.remove('scroll');
+                }
             }
+            contentp.style.color = 'rgb(' + window.pageYOffset * 0.23 + ', ' + window.pageYOffset * 0.23 + ', ' + window.pageYOffset * 0.23 + ')';
+            
+
+
         });
     
     </script>
